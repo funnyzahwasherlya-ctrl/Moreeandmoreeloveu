@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Surat Rahasia 💌</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Courier New', cursive;
+  background: linear-gradient(135deg, #1a1a1a, #2b2b2b);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* KOTAK SURAT */
+#surat {
+  width: 80%;
+  max-width: 600px;
+  background: rgba(0,0,0,0.7);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 25px blue;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+h2 {
+  color: white;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: lightblue;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  margin-top: 10px;
+  width: 80%;
+}
+
+/* PASSWORD */
+#passwordBox {
+  display: none;
+  animation: fadeIn 1s ease;
+}
+
+#errorMsg {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+</style>
+
+</head>
+<body>
+
+<div id="surat">
+  <h2>💌 Sepucuk surat untuk mu 💌</h2>
+  
+  <p>
+    Hii hiii ...<br><br>
+    Aku nulis ini buat kamu soalnya gabut,<br>
+    Yaa engga lah gilakk, yakali aku buat beginian karna gabut.<br><br>
+    
+    Aku buat ini karna niat banget, ntah jadinya gimana trobos ajaa bikinnya.<br>
+    Aku cuman mau minta maaf karna membuang waktu mu buat aku,<br>
+    Aku juga minta maaf karna waktu aku juga engga terlalu banyak buat kamu.<br><br>
+    
+    Aku juga udah berusaha tapi tetep salah mulu perasaan,<br>
+    belom lagi buat ovt, jadi gila beneran aku teh kalau buka tiktok<br>
+    Apa lagi kamu yang kayaknya udah mulai bodo amat sama aku <br>
+    Merinding kalau di inget-inget kamu yang kayak gitu <br>
+    jadi aku bener-bener minta maaf sebanyak banyaknya ke kamu atas sikap aku<br>
+    karna aku bener-bener egois, tapi aku udah tau salah kok<br>
+    Maapiinn yakkk? lopyuuu. ❤️<br><br>
+    
+    Terima kasih selalu ada buat aku.<br>
+    stay health, stay safe and stay rich... 💖
+  </p>
+
+  <button onclick="selesaiBaca()">Aku sudah membaca</button>
+
+  <div id="passwordBox">
+    <p>Masukkan password untuk keluar:</p>
+    <input type="password" id="pass" placeholder="Kalau kamu inget, pasti bisa 😉">
+    <br>
+    <button onclick="cekPassword()">Submit</button>
+
+    <div id="errorMsg"></div>
+  </div>
+</div>
+
+<script>
+// TAMPILKAN PASSWORD
+function selesaiBaca() {
+  document.getElementById("passwordBox").style.display = "block";
+}
+
+// CEK PASSWORD
+function cekPassword() {
+  let password = document.getElementById("pass").value;
+  const errorMsg = document.getElementById("errorMsg");
+
+  password = password.toLowerCase().replace(/\s+/g, ' ').trim();
+
+  if(password === "17 tahun 7 bulan 13 hari") {
+    document.body.innerHTML = "<h1 style='color:pink;text-align:center;'>Terimakasih karna udah di bacaa 💌</h1>";
+  } else {
+    errorMsg.innerText = "anjirr, ni orang lupa. cobaa lagi yak 😝";
+  }
+}
+</script>
+
+</body>
+</html>
