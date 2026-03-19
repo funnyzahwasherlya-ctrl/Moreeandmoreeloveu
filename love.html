@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Rain</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      font-family: Arial, sans-serif;
+    }
+
+    .love {
+      position: absolute;
+      color: #ff4d6d;
+      font-size: 20px;
+      user-select: none;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  function createLove() {
+    const love = document.createElement("div");
+    love.classList.add("love");
+    love.innerText = "LOVE YOUU MORENOOOO";
+    
+
+    // posisi horizontal random
+    love.style.left = Math.random() * 100 + "vw";
+
+    // ukuran random
+    love.style.fontSize = (Math.random() * 20 + 10) + "px";
+
+    // durasi jatuh random
+    love.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+    document.body.appendChild(love);
+
+    // hapus setelah selesai animasi
+    setTimeout(() => {
+      love.remove();
+    }, 5000);
+  }
+
+  // buat banyak love terus-menerus
+  setInterval(createLove, 100);
+</script>
+
+</body>
+</html>
